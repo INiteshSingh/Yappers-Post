@@ -8,7 +8,7 @@ def home(request):
 def blog_form(request):
     form = write_your_blog()
     if request.method == "POST":
-        form = write_your_blog(request.POST)
+        form = write_your_blog(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             print("Blog Saved")    

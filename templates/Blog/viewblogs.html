@@ -4,11 +4,17 @@
 
 {% block content %} 
 
-    {% if current_blogs %} {%for blog_data in current_blogs %}
+<div class="content">
+    {% if current_blogs %} 
+    {%for blog_data in current_blogs %}
         <h1>Blog Title : {{blog_data.Blog_Title}}</h1>
-        <p>{{blog_data.Blog_Content}}</p>
+        <p class="fs-3">{{blog_data.Blog_Content}}</p>
         <h3>Author: {{blog_data.Blog_Author}}</h3>
-    {%endfor%} 
+        {% if blog_data.Blog_Image %}
+            <img src="{{blog_data.Blog_Image.url}}" alt="{{blog_data.Blog_Title}}" >
+        {% endif %}
+{%endfor%} 
+</div>
 
 {% else %}
 

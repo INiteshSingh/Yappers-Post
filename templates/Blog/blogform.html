@@ -3,7 +3,7 @@
 {% block title %} Write Your Blog {% endblock %}
 
 {% block content %}
-<form  method="post">
+<form  method="post" enctype="multipart/form-data">
     {{form.as_p}}
     {% csrf_token %}
     <input type="submit" value="Save Your Blog">
