@@ -1,11 +1,20 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yappers Post</title>
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+
+    <!-- Page-specific CSS -->
+    {% block extra_css %}{% endblock %}
 </head>
 <body>
 
@@ -44,16 +53,28 @@
 </nav>
 
 <!-- hero-section -->
-<div class="mt-7 hero d-flex justify-content-center align-items-center ">
-    <span class="display-4">Welcome to Yappers Post</span>
-</div>
+{% block hero %}{% endblock %}
+
 <main class="container mt-4">
     {% block content %}
     <!-- Child templates will insert content here -->
     {% endblock %}
 </main>
 
+<!-- Bootstrap Bundle -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
         integrity="sha384-xxx" crossorigin="anonymous"></script>
+
+<!-- Page-specific JS -->
+{% block extra_js %}{% endblock %}
+
 </body>
+
+<script>
+document.getElementById('start-yapping').addEventListener('click', function() {
+    document.getElementById('hero-section').style.display = 'none';
+    document.getElementById('blog-form-section').style.display = 'block';
+});
+</script>
+
 </html>

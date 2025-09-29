@@ -1,0 +1,20 @@
+<!-- This is the hero block that gets displayed on the base by default 
+This block is separted because the hero section has to be Hidden while Writing the blog and that is only possible when the hero is in a separate blog -->
+
+{% extends 'Blog/Yappers Post.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/hero.css' %}">
+{% endblock %}
+
+{% block hero %}
+    <div class="mt-7 hero d-flex justify-content-center align-items-center gap-5 flex-row " b>
+    <img src="{% static 'images/thank_you_image.png' %}" alt="Thank You Image" class="img-fluid rounded" style="height: 300px;">
+    <div class="">
+        <span class="display-4">Welcome to Yappers Post</span> <br>
+        <span class="fs-3">Write Your Stories and Let the World Know Your Yap Score</span>
+        <a href="{% url 'blog_form' %}" style="text-decoration: none;"><button class="hero-button btn-teritiary mt-4">Start Yapping</button></a>
+    </div>
+</div>
+{% endblock %}
