@@ -5,55 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yappers Post</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" 
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
     <!-- Global CSS -->
     <link rel="stylesheet" href="{% static 'css/home_page.css' %}">
-
     <!-- Page-specific CSS -->
-    {% block extra_css %}{% endblock %}
+    <!-- {% block extra_css %}{% endblock %} -->
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light ">
-    <div class="container-fluid h-75">
-        <a class="navbar-brand css-link" href="#">Yappers Post</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarPillsExample" 
-                aria-controls="navbarPillsExample" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarPillsExample">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'blog_form' %}">Write Your Blogs</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'view_blogs' %}">Read Current Blogs</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Projects
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                </li>
-            </ul>
+<nav>
+    <div class="nav-container">
+        <ul>
+            <li><span class="Logo">Yappers Post</span></li>
+        </ul>
+        <div class="auth">
+            <a href="#"><span>Log In</span></a>
+            <a href="#"><span>Sign UP</span></a>
         </div>
     </div>
 </nav>
 
 <!-- hero-section -->
-{% block hero %}{% endblock %}
+<div class="hero-section">
+    <span class="heading-text">Discover Relateable Experiences</span>
+    <span class="desc-text">Yap to Your Heart's Content ❤️ With Fellow Yappers 🙋‍♂️, Share Common Experiences and Ideas 💡</span>
+    <a href="#" class="hero-btn">Start Yapping</a>
+</div>
 
 <main class="container mt-4">
     {% block content %}
@@ -61,20 +37,6 @@
     {% endblock %}
 </main>
 
-<!-- Bootstrap Bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-xxx" crossorigin="anonymous"></script>
-
-<!-- Page-specific JS -->
-{% block extra_js %}{% endblock %}
 
 </body>
-
-<script>
-document.getElementById('start-yapping').addEventListener('click', function() {
-    document.getElementById('hero-section').style.display = 'none';
-    document.getElementById('blog-form-section').style.display = 'block';
-});
-</script>
-
 </html>
