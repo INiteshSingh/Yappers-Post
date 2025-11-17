@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <h1>Login Using Your Yapp ID and Password</h1>
+    <form action="{% url 'login' %}" method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>

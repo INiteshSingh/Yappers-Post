@@ -18,7 +18,7 @@
             <li><a href="{% url 'home' %}"><span class="Logo">Yappers Post</span></a></li>
         </ul>
         <div class="auth">
-            <a href="#"><span>Log In</span></a>
+            <a href="{% url 'login' %}"><span>Log In</span></a>
             <a href="#"><span>Sign UP</span></a>
         </div>
     </div>
@@ -28,7 +28,7 @@
 <div class="hero-section">
     <span class="heading-text">Discover Relateable Experiences</span>
     <span class="desc-text">Yap to Your Heart's Content ❤️ With Fellow Yappers 🙋‍♂️, Share Common Experiences and Ideas 💡</span>
-    <a href="#" class="hero-btn">Start Yapping</a>
+    <a href="{% url 'blog_form' %}" class="hero-btn">Start Yapping</a>
 </div>
 
 <main class="container mt-4">
