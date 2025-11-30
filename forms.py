@@ -2,14 +2,14 @@ from django import forms
 from Blog.models import Blog_Data
 from django.contrib.auth.models import User
 
-class loginForm(forms.ModelForm):
-    class Meta:
-        model = 
+class login_Form(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput())
 
 class signupForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ["UserName","Password"]
+        fields = ["username","password","email","first_name","last_name"]
 
 class write_your_blog(forms.ModelForm):
     Blog_Author = forms.CharField(max_length=30)
@@ -19,7 +19,6 @@ class write_your_blog(forms.ModelForm):
     class Meta:
         model = Blog_Data
         fields = ["Blog_Author","Blog_Title","Blog_Content","Blog_Image"]
-        
 
         
 

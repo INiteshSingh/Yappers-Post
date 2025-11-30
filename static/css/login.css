@@ -1,0 +1,16 @@
+.container{
+    border: 2px solid black;
+    width: fit-content;
+    padding: 30px;
+}
+.container>form{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+input{
+    display:block;
+    padding: 5px;
+}
