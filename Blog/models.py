@@ -8,14 +8,17 @@ class User_Data(models.Model):
         FEMALE = "F","Female",
         OTHER = "O","Other"
 
-    user_name = models.CharField(max_length=30)
+    first_name = models.CharField(max_length=30,null=False)
+    last_name = models.CharField(max_length=30,null=False)
+    yapp_username = models.CharField(max_length=30,unique=True,null=False)
+    user_password = models.CharField(max_length=30,null=False)
     user_bio = models.TextField()
-    profile_photo = models.ImageField(upload_to='profile_photos/',blank=True,null=True,default="media/profile_photos/default-male-profile-photo.jpg")
-    joined_date = models.DateField(default=date)
+    profile_photo = models.ImageField(upload_to='profile_photos/',blank=True,null=True,default="profile_photos/default-male-profile-photo.jpg")
+    joined_date = models.DateField(default=date.today)
     user_gender = models.CharField(
         max_length=1,
         choices = Gender.choices,
-        default=Gender.Male,
+        default=Gender.MALE,
         null=False,)
 
 class Blog_Data(models.Model):

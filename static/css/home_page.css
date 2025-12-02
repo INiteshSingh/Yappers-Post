@@ -6,11 +6,11 @@
     padding:1rem;
     align-items: center;
     border-bottom: 1px solid #fff;
-    /* background-color: #000; */
+    background-color: #000;
 }
 
 .nav-text{
-    color:#fff;
+    color:black  ;
 }
 .nav-container>ul{
     display: flex;
@@ -27,16 +27,16 @@
     font-style: normal;
 }
 
-ul>li>a{
+.home-link{
     text-decoration: none;
-    color: #fff;
+    
+    /* color: #fff; */
 }
 
 .auth{
     display: flex;
     gap: 2rem;
     text-decoration: none;
-
 }
 
 .auth>a{
@@ -59,12 +59,19 @@ ul>li>a{
     transition: 0.2s ease-in-out;
 }
 
-.Logo{
+.Logo>a{
+    text-decoration: none;
+    color:black;
+
+}
+
+.Logo>span{
     font-family: "SUSE Mono", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
     font-size:2rem;
+    color: black;
 }
 
 .hero-section{

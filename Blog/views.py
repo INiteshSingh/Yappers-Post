@@ -5,6 +5,20 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login,authenticate
 # Create your views here.
 def home(request):
+    user = request.user
+    # if request.user.is_authenticated:
+    #     user_name = user.username
+    #     # user_image = "media/profile_photos/default-female-profile-photo.jpg" if user.user_gender == "Female" else "media/profile_photos/default-male-profile-photo.jpg"
+    #     if user.user_gender == "MALE":
+    #         user_image = "media/blog_images/default-male-profile-photo.jpg"
+    #     else:
+    #         user_image = "media/blog_images/default-female-profile-photo.jpg"
+    #     context = {
+    #         "user_name":user_name,
+    #         "user_image":user_image
+    #     }
+    #     return render(request,'Blog/Yappers Post.html',context)
+    # else:
     return render(request,'Blog/Yappers Post.html')
 
 def signup_page(request):
@@ -12,7 +26,7 @@ def signup_page(request):
         form = signupForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
-            user.set_password(form.cleaned_data['password'])
+            user.set_password(form.cleaned_data['user_password'])
             user.save()
             return redirect('login')
         else:

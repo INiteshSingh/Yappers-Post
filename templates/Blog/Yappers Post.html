@@ -14,19 +14,26 @@
 
 <nav>
     <div class="nav-container">
-        <ul>
-            <li><a href="{% url 'home' %}"><span class="Logo">Yappers Post</span></a></li>
-        </ul>
+        <!-- need to make this link colord black -->
+        <span class="Logo"><a href="{% url 'home' %}">Yappers Post</a></span>
+        <!-- Makes Django Display Login and Signup Links if the user is not Currently Logged In -->
         {% if not user.is_authenticated %}
         <div class="auth ">
-            <a href="{% url 'login' %}"><span class="nav-text">Log In</span></a>
-            <a href="{% url 'signup_page' %}"><span class="nav-text">Sign UP</span></a>
+            <a href="{% url 'login' %}" class="nav-text"><span >Log In</span></a>
+            <a href="{% url 'signup_page' %}" class="nav-text"><span >Sign UP</span></a>
         </div>
         {% else %}
+        <!-- If the user is Logged in then a session_id would be created and if so then the user will be signed in
+                    if so then dispaly the username and a user image  -->
         <div class="user-profile">
+            <!-- If the User has set a Profile Photo then Display that or else Display a Default Image depending on the Users Gender-->
+            
+            <!-- For now since i cannot afford a cloud service i have just the option to display the Defalut Image of the user -->
+
             <img src="{{user.profile_photo.url}}" alt="media/profile_photos/default-profile-photo" class="profile-photo">
             <span>{{user_name}}</span>
         </div>
+        {% endif %}
     </div>
 </nav>
 

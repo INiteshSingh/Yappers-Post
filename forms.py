@@ -8,8 +8,15 @@ class login_Form(forms.Form):
 
 class signupForm(forms.ModelForm):
     class Meta:
-        model = User
-        fields = ["username","password","email","first_name","last_name"]
+        model = User_Data
+        fields = ["first_name",
+                  "last_name",
+                  "yapp_username",
+                  "user_password",
+                  "user_bio",
+                  "profile_photo",
+                  "joined_date",
+                  "user_gender"]
 
 class write_your_blog(forms.ModelForm):
     Blog_Author = forms.CharField(max_length=30)
@@ -19,8 +26,3 @@ class write_your_blog(forms.ModelForm):
     class Meta:
         model = Blog_Data
         fields = ["Blog_Author","Blog_Title","Blog_Content","Blog_Image"]
-
-class user_data(forms.ModelForm):
-    class Meta:
-        model = User_Data
-        fields = ['user_name','user_bio','profile_photo','joined_date']
