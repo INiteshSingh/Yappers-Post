@@ -11,7 +11,9 @@ def signup_page(request):
     if request.method == "POST":
         form = signupForm(request.POST)
         if form.is_valid():
-            form.save()
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data['password'])
+            user.save()
             return redirect('login')
         else:
             error_message = "Invalid Data, Please Check Your Input"
