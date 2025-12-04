@@ -30,7 +30,7 @@
             
             <!-- For now since i cannot afford a cloud service i have just the option to display the Defalut Image of the user -->
 
-            <img src="{{user.profile_photo.url}}" alt="media/profile_photos/default-profile-photo" class="profile-photo">
+            <img src="/media/profile_photos/male_default.jpg" alt="user photo" class="profile-photo">
             <span>{{user_name}}</span>
         </div>
         {% endif %}
@@ -43,13 +43,6 @@
     <span class="desc-text">Yap to Your Heart's Content ❤️ With Fellow Yappers 🙋‍♂️, Share Common Experiences and Ideas 💡</span>
     <a href="{% url 'blog_form' %}" class="hero-btn">Start Yapping</a>
 </div>
-
-<main class="container mt-4">
-    {% block content %}
-    <!-- Child templates will insert content here -->
-    {% endblock %}
-</main>
-
 
 </body>
 </html>
