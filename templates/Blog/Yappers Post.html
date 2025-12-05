@@ -37,12 +37,11 @@
     </div>
 </nav>
 
-<!-- hero-section -->
-<div class="hero-section">
-    <span class="heading-text">Discover Relateable Experiences</span>
-    <span class="desc-text">Yap to Your Heart's Content ❤️ With Fellow Yappers 🙋‍♂️, Share Common Experiences and Ideas 💡</span>
-    <a href="{% url 'blog_form' %}" class="hero-btn">Start Yapping</a>
-</div>
+{% block hero %}
+    {% if not user.is_authenticated %}
+        {% include "Blog/hero.html" %}
+    {% endif %}
+{% endblock hero %}
 
 </body>
 </html>

@@ -39,6 +39,9 @@ def signup_page(request):
         form = signupForm()
     return render(request,'registration/signup_page.html',{"form":form}) 
 
+def hero_view(request):
+    return render(request,'testapp/hero.html')
+    
 def login_page(request):
     form = login_Form()
     if request.method == "POST":

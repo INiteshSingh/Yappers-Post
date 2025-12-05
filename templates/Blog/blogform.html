@@ -2,6 +2,11 @@
 {% load static %}
 {% block title %} Submit to Yappers Post {% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/.css' %}">
+{% endblock %}
+
+
 {% block content %}
     {% if submit_status %}
         <div class="container d-flex justify-content-center align-items-center">

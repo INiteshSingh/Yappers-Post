@@ -9,12 +9,9 @@ This block is separted because the hero section has to be Hidden while Writing t
 {% endblock %}
 
 {% block hero %}
-    <div class="mt-7 hero d-flex justify-content-center align-items-center gap-5 flex-row " b>
-    <img src="{% static 'images/thank_you_image.png' %}" alt="Thank You Image" class="img-fluid rounded" style="height: 300px;">
-    <div class="">
-        <span class="display-4 nav-text">Welcome to Yappers Post</span> <br>
-        <span class="fs-3 nav-text">Write Your Stories and Let the World Know Your Yap Score</span>
-        <a href="{% url 'blog_form' %}" style="text-decoration: none;"><button class="hero-button btn-teritiary mt-4 nav-text">Start Yapping</button></a>
-    </div>
+<div class="hero-section">
+    <span class="heading-text">Discover Relateable Experiences</span>
+    <span class="desc-text">Yap to Your Heart's Content ❤️ With Fellow Yappers 🙋‍♂️, Share Common Experiences and Ideas 💡</span>
+    <a href="{% url 'blog_form' %}" class="hero-btn">Start Yapping !</a>
 </div>
 {% endblock %}
